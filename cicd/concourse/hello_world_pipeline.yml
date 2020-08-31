@@ -1,0 +1,43 @@
+---
+jobs:
+ - name: hello-world
+   public: true
+   plan:
+   - task: say-hello
+     config:
+       platform: linux
+       image_resource:
+         type: docker-image
+         source: {repository: alpine}
+       run:
+         path: echo
+         args: [hello world]
+
+   - task: fail
+     config:
+       platform: linux
+       image_resource:
+         type: registry-image
+         source:
+           repository: alpine
+       run:
+         path: sh
+         args:
+           - -exc
+           - |
+             echo "Let's fail now!"
+             exit 1
+
+   - task: will never run
+     config:
+       platform: linux
+       image_resource:
+         type: registry-image
+         source:
+           repository: alpine
+       run:
+         path: sh
+         args:
+           - -exc
+           - |
+             echo "Will never run!"

@@ -4,7 +4,7 @@ wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/d
 docker-compose up -d
 ```
 
-## Checking if concourse is running
+## Checking if concourse is running
 go to `http://127.0.0.1:8080/`
 
 ## Comunication with the concourse API
@@ -33,7 +33,7 @@ Target means: `Alias of Concourse endpoints, which composes of server url, crede
 
 This config has been saved on `~/.flyrc` file.
 
-## My first pipeline at concourse
+## My first pipeline at concourse
 
 Launch: 
 
